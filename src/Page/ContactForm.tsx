@@ -32,7 +32,7 @@ const ContactForm: React.FC = () => {
     <>
       <div
         id="Contact"
-        className="flex items-center justify-center min-h-screen bg-gray-900 pl-7"
+        className="flex items-center justify-center min-h-screen bg-gray-900 pl-7 pr-7 "
       >
         <form
           onSubmit={sendEmail} // Using EmailJS
