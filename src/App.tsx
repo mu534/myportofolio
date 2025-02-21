@@ -29,22 +29,10 @@ function App() {
             {" "}
             Projects i built recently
           </h1>
-          <Project
-            title="Game-hub"
-            description="The game-hub is built using React and TypeScript, ensuring a robust and type-safe development environment. For styling and component design, it leverages Chakra UI, which provides a modular and customizable UI framework. This combination allows for a responsive, user-friendly interface with clean, organized game categories and features like sorting and filtering. The use of Chakra UI ensures a modern, visually appealing design while maintaining a seamless browsing experience across devices."
-            imageUrl={Game}
-          />
+          <Project title="Game-hub" imageUrl={Game} />
           <div>
-            <Project
-              title="E-commerce"
-              description=" e-commerce website designed to offer users a smooth online shopping experience. Built with HTML, CSS, and JavaScript, it features a clean, responsive layout for browsing products, adding them to the cart, and completing purchases. With a focus on user-friendly navigation and performance, ShopMaster aims to make online shopping easy and enjoyable."
-              imageUrl={ecommerce}
-            />{" "}
-            <Project
-              title="calculater"
-              description="calculator built with HTML, CSS, and JavaScript. Offering basic arithmetic functions, it provides a clean, intuitive interface for quick calculations. Whether you're doing simple math or solving everyday problems, it is designed for efficiency and ease of use."
-              imageUrl={calculator}
-            />
+            <Project title="E-commerce" imageUrl={ecommerce} />{" "}
+            <Project title="calculater" imageUrl={calculator} />
           </div>
         </div>
         <div>

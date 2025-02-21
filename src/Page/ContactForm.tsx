@@ -32,11 +32,11 @@ const ContactForm: React.FC = () => {
     <>
       <div
         id="Contact"
-        className="flex items-center justify-center min-h-screen bg-gray-900"
+        className="flex items-center justify-center min-h-screen bg-gray-900 pl-7"
       >
         <form
           onSubmit={sendEmail} // Using EmailJS
-          className="w-full max-w-md sm:max-w-lg bg-gray-800 p-6 sm:p-8 rounded-lg shadow-lg"
+          className="w-full max-w-md sm:max-w-lg bg-gray-800 p-6  sm:p-8 rounded-lg shadow-lg"
         >
           <div className="mb-4">
             <label className="block text-gray-400 mb-1">First Name:</label>

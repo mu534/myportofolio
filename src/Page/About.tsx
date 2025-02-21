@@ -1,6 +1,7 @@
 // components/About.tsx
 import React from "react";
 import mudasirAbout from "../assets/mudasirAbout.png";
+import Resume from "../assets/resume.pdf";
 import {
   FaReact,
   FaNodeJs,
@@ -63,7 +64,7 @@ const About: React.FC = () => {
           {/* Resume Button */}
           <div className="mt-6">
             <a
-              href="/resume.pdf" // Replace with your resume file path
+              href={Resume} // Replace with your resume file path
               download
               className="inline-block px-6 py-2 bg-purple-500 text-white rounded-lg font-semibold hover:bg-purple-600 transition duration-300"
             >
