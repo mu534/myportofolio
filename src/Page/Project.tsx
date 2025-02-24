@@ -8,11 +8,11 @@ interface ProjectProps {
 
 const Project: React.FC<ProjectProps> = ({ title, imageUrl }) => {
   return (
-    <div className="border border-purple-600 pl-3 pr-3 m-6 ml-6 rounded-lg max-w-lg mx-auto">
-      <h2 className="text-purple-500 font-inter text-3xl font-bold text-center mb-3">
+    <div className="border border-gray-600 px-3 py-6 rounded-lg max-w-lg mx-auto mb-6 ml-6 mr-6">
+      <h2 className="text-purple-500 font-inter text-3xl font-bold text-center mb-4">
         {title}
       </h2>
-      <div className="p-0 ">
+      <div className="p-0 mb-4">
         <img
           alt={title}
           src={imageUrl}
