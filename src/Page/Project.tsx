@@ -1,49 +1,59 @@
-import { Github } from "lucide-react";
-import React from "react";
+import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 
 interface ProjectProps {
   title: string;
   imageUrl: string;
-  techs?: string[]; // Optional prop for technologies used
+  description: string;
+  githubLink: string;
+  demoLink?: string;
+  tools?: string[];
 }
 
-const Project: React.FC<ProjectProps> = ({ title, imageUrl, techs = [] }) => {
+const Project: React.FC<ProjectProps> = ({
+  title,
+  imageUrl,
+  description,
+  githubLink,
+  demoLink,
+  tools,
+}) => {
   return (
-    <div className="border border-gray-700 bg-gray-800 px-6 py-8 rounded-lg shadow-lg transition-transform transform hover:scale-105 relative">
-      {/* Title and GitHub icon */}
-      <div className="flex justify-between items-center mb-4">
-        <h2 className="text-purple-500 font-inter text-2xl font-bold">
-          {title}
-        </h2>
-        <a
-          href="https://github.com/mu534"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="p-2 bg-gray-700 rounded-full hover:bg-gray-600 transition duration-300"
-        >
-          <Github className="w-6 h-6 text-white" />
-        </a>
+    <div className="flex flex-col md:flex-row items-center bg-gray-800 p-6 rounded-lg shadow-lg w-full md:w-3/4 mx-auto border border-gray-700">
+      {/* Left: Project Image */}
+      <div className="md:w-1/2">
+        <img src={imageUrl} alt={title} className="w-full rounded-md" />
       </div>
 
-      {/* Project Image */}
-      <div className="mb-4">
-        <img
-          alt={title}
-          src={imageUrl}
-          className="w-full h-48 object-cover rounded-md"
-        />
-      </div>
+      {/* Right: Project Details */}
+      <div className="md:w-1/2 md:ml-6 mt-6 md:mt-0">
+        {/* Project Title */}
+        <div className="flex justify-between items-center bg-gray-700 p-3 rounded-md">
+          <h2 className="text-lg font-bold text-gray-200">{title}</h2>
+          <div className="flex space-x-3">
+            {/* GitHub Link */}
+            <a href={githubLink} target="_blank" rel="noopener noreferrer">
+              <FaGithub className="h-6 w-6 text-gray-300 hover:text-gray-400" />
+            </a>
+            {/* Demo Link */}
+            {demoLink && (
+              <a href={demoLink} target="_blank" rel="noopener noreferrer">
+                <FaExternalLinkAlt className="h-5 w-5 text-gray-300 hover:text-gray-400" />
+              </a>
+            )}
+          </div>
+        </div>
 
-      {/* Footer Section - Tech Used */}
-      <div className="flex justify-between items-center mt-4 text-gray-400 text-sm">
-        <span className="font-semibold">Tech Used:</span>
-        <div className="flex flex-wrap gap-2">
-          {techs.map((tech, index) => (
+        {/* Project Description */}
+        <p className="text-gray-300 my-4 text-sm">{description}</p>
+
+        {/* Tools Used */}
+        <div className="flex flex-wrap gap-2 mt-4">
+          {tools?.map((tool, index) => (
             <span
               key={index}
-              className="bg-gray-700 text-white px-2 py-1 rounded-lg text-xs"
+              className="px-3 py-1 bg-gray-700 text-gray-300 text-xs rounded-md"
             >
-              {tech}
+              {tool}
             </span>
           ))}
         </div>
