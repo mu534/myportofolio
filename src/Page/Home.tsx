@@ -14,7 +14,7 @@ export default function Portfolio() {
   return (
     <div
       id="Home"
-      className="flex flex-col lg:flex-row min-h-screen bg-gray-900 text-white items-center justify-center ml-6"
+      className="flex flex-col lg:flex-row min-h-screen bg-gray-900 text-white items-center justify-center ml-6 mr-6"
     >
       {/* Sidebar */}
       <aside className="w-full lg:w-[300px] p-6 bg-gray-800 flex flex-col items-center shadow-lg">
