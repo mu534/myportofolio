@@ -5,82 +5,65 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="grid lg:grid-cols-3 gap-4 p-6  bg-gray-900 text-white">
-      {/* Left Section: Home Icon */}
+    <nav className="bg-gradient-to-r from-gray-900 to-gray-800 text-white py-4 px-4 md:px-6 shadow-lg sticky top-0 z-50">
+      <div className="container mx-auto flex items-center justify-between">
+        {/* Left Section: Brand */}
+        <div className="flex items-center space-x-2">
+          <h1
+            className="text-xl md:text-2xl font-extrabold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-400"
+            style={{ fontFamily: "'Poppins', sans-serif" }}
+          >
+            Mudasir
+          </h1>
+        </div>
 
-      <div className="flex items-center space-x-4 ">
-        {/* <Home className="w-6 h-6 text-blue-400  " />
-        <h1 className="text-xl font-bold">My Website</h1> */}
-      </div>
+        {/* Center Section: Desktop Menu */}
+        <ul className="hidden lg:flex items-center space-x-8">
+          {["Home", "About", "Project", "Contact"].map((item) => (
+            <li key={item}>
+              <a
+                href={`#${item}`}
+                className="text-sm font-medium text-gray-200 hover:text-purple-400 transition-all duration-300 transform hover:scale-105"
+                style={{ fontFamily: "'Roboto', sans-serif" }}
+              >
+                {item}
+              </a>
+            </li>
+          ))}
+        </ul>
 
-      {/* Center Section: Desktop Menu */}
-      <ul className="hidden lg:flex justify-center space-x-6">
-        <li>
-          <a href="#Home" className="hover:text-gray-400">
-            Home
-          </a>
-        </li>
-        <li>
-          <a href="#About" className="hover:text-gray-400">
-            About
-          </a>
-        </li>
-        <li>
-          <a href="#Project" className="block py-0 hover:bg-gray-800">
-            Project
-          </a>
-        </li>
-        {/* <li>
-          <a href="#services" className="hover:text-gray-400">
-            Services
-          </a>
-        </li> */}
-        <li>
-          <a href="#Contact" className="hover:text-gray-400">
-            Contact
-          </a>
-        </li>
-      </ul>
-
-      {/* Right Section: Hamburger Menu Button for Mobile */}
-      <div className="lg:hidden flex justify-end items-center">
-        <button onClick={() => setIsOpen(!isOpen)} className="p-2">
-          {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-        </button>
+        {/* Right Section: Hamburger Menu Button for Mobile */}
+        <div className="lg:hidden flex items-center">
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="p-1 rounded-full hover:bg-gray-700 transition-colors duration-300"
+            aria-label="Toggle menu"
+          >
+            {isOpen ? (
+              <X className="w-6 h-6 text-gray-200" />
+            ) : (
+              <Menu className="w-6 h-6 text-gray-200" />
+            )}
+          </button>
+        </div>
       </div>
 
       {/* Mobile Menu */}
-
       {isOpen && (
-        <>
-          <ul className="lg:hidden mt-4 space-y-4 text-center">
-            <li>
-              <a href="#Home" className="block py-2 hover:bg-gray-800">
-                Home
+        <ul className="lg:hidden mt-2 bg-gray-800/90 backdrop-blur-sm rounded-b-lg shadow-lg overflow-hidden">
+          {["Home", "About", "Project", "Contact"].map((item) => (
+            <li key={item}>
+              <a
+                href={`#${item}`}
+                className="block py-2 px-4 text-sm font-medium text-gray-200 hover:bg-gray-700 hover:text-purple-400 transition-all duration-300"
+                style={{ fontFamily: "'Roboto', sans-serif" }}
+                onClick={() => setIsOpen(false)} // Close menu on click
+              >
+                {item}
               </a>
             </li>
-            <li>
-              <a href="#About" className="block py-2 hover:bg-gray-800">
-                About
-              </a>
-            </li>
-            <li>
-              <a href="#Project" className="block py-2 hover:bg-gray-800">
-                Project
-              </a>
-            </li>
-            {/* <li>
-      <a href="#services" className="block py-2 hover:bg-gray-800">
-        Services
-      </a>
-    </li> */}
-            <li>
-              <a href="#Contact" className="block py-2 hover:bg-gray-800">
-                Contact
-              </a>
-            </li>
-          </ul>
-        </>
+          ))}
+        </ul>
       )}
     </nav>
   );

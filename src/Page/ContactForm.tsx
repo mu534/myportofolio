@@ -29,57 +29,70 @@ const ContactForm: React.FC = () => {
   };
 
   return (
-    <>
-      <div
-        id="Contact"
-        className="flex items-center justify-center min-h-screen bg-gray-900 pl-7 pr-7 "
+    <div
+      id="Contact"
+      className="min-h-screen bg-gradient-to-br from-gray-900 to-gray-800 flex items-center justify-center p-4 md:p-6"
+    >
+      <form
+        onSubmit={sendEmail}
+        className="w-full max-w-sm sm:max-w-md md:max-w-lg bg-gray-800/90 backdrop-blur-sm p-6 rounded-xl shadow-xl border border-gray-700/50 hover:border-purple-500/50 transition-all duration-300"
       >
-        <form
-          onSubmit={sendEmail} // Using EmailJS
-          className="w-full max-w-md sm:max-w-lg bg-gray-800 p-6  sm:p-8 rounded-lg shadow-lg"
-        >
-          <div className="mb-4">
-            <label className="block text-gray-400 mb-1">First Name:</label>
+        <h2 className="text-xl md:text-2xl font-semibold text-center bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent mb-6">
+          Get in Touch
+        </h2>
+
+        <div className="space-y-5">
+          <div>
+            <label className="block text-gray-300 text-sm font-medium mb-1">
+              First Name
+            </label>
             <input
               type="text"
               name="firstName"
               required
-              className="w-full px-4 py-2 bg-gray-700 text-white border border-gray-600 rounded"
+              className="w-full px-3 py-2 bg-gray-700/50 text-white border border-gray-600 rounded-lg focus:border-purple-500 focus:ring-1 focus:ring-purple-500 outline-none transition-all duration-300"
               onChange={handleChange}
+              placeholder="Your Name"
             />
           </div>
 
-          <div className="mb-4">
-            <label className="block text-gray-400 mb-1">Email:</label>
+          <div>
+            <label className="block text-gray-300 text-sm font-medium mb-1">
+              Email
+            </label>
             <input
               type="email"
               name="email"
               required
-              className="w-full px-4 py-2 bg-gray-700 text-white border border-gray-600 rounded"
+              className="w-full px-3 py-2 bg-gray-700/50 text-white border border-gray-600 rounded-lg focus:border-purple-500 focus:ring-1 focus:ring-purple-500 outline-none transition-all duration-300"
               onChange={handleChange}
+              placeholder="your@email.com"
             />
           </div>
 
-          <div className="mb-4">
-            <label className="block text-gray-400 mb-1">Message:</label>
+          <div>
+            <label className="block text-gray-300 text-sm font-medium mb-1">
+              Message
+            </label>
             <textarea
               name="message"
               required
-              className="w-full px-4 py-2 bg-gray-700 text-white border border-gray-600 rounded"
+              className="w-full px-3 py-2 bg-gray-700/50 text-white border border-gray-600 rounded-lg focus:border-purple-500 focus:ring-1 focus:ring-purple-500 outline-none transition-all duration-300 resize-y"
               rows={4}
               onChange={handleChange}
-            ></textarea>
+              placeholder="Your message here..."
+            />
           </div>
 
           <button
             type="submit"
-            className="w-full px-4 py-2 bg-purple-600 text-white rounded hover:bg-purple-700"
+            className="w-full px-4 py-2 bg-gradient-to-r from-purple-500 to-blue-500 text-white rounded-lg font-semibold hover:from-purple-600 hover:to-blue-600 transition-all duration-300 transform hover:scale-105 active:scale-95"
           >
-            Contact
+            Send Message
           </button>
-        </form>
-      </div>
-    </>
+        </div>
+      </form>
+    </div>
   );
 };
 

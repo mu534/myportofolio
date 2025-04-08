@@ -3,6 +3,7 @@ import NavBar from "./components/NavBar";
 import Game from "../src/assets/Game.png";
 import ecommerce from "../src/assets/Ecommerece.png";
 import wsi from "../src/assets/wsi.png";
+import newsdetector from "../src/assets/newsdetector.png";
 import Airesume from "../src/assets/Airesume.png";
 import Project from "./Page/Project";
 import ContactForm from "./Page/ContactForm";
@@ -31,6 +32,15 @@ function App() {
           </h1>
           <div className="container mx-auto px-6">
             <div className="grid grid-cols-0  md:grid-cols-0 gap-8">
+              <Project
+                title="fake-news detector"
+                imageUrl={newsdetector}
+                description="TruthGuard: Your AI companion in the fight against misinformation.
+Analyze and fact-check news, social posts, and claims in real time using advanced AI tools.
+Empowering you to make informed decisions and stay ahead of fake news."
+                githubLink="https://github.com/mu534/AI-powered-fake-news-detector.git"
+                demoLink="https://newsdetector-livid.vercel.app"
+              />{" "}
               <Project
                 title="WSI Analyzer"
                 imageUrl={wsi}
